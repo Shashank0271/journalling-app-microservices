@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: IMAGESERVICE
+            uri: lb://IMAGEMICROSERVICE
+            predicates:
+              - Path=/image/**
+          - id: JOURNALSERVICE
+            uri: lb://JOURNALMICROSERVICE
+            predicates:
+              - Path=/journal/**
+          - id: USERSERVICE
+            uri: lb://USERMICROSERVICE
+            predicates:
+              - Path=/user/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
