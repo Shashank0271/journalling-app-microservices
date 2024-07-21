@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import static com.image.ImageMicroservice.utils.ImageUtil.convertMultipartFileToFile;
 
@@ -80,28 +83,25 @@ public class ImageService {
     }
 
     public Image createUserProfileImage(MultipartFile userProfileImage, long userId) {
-        Image image = Image.builder()
-                .imageCategory(ImageCat.PROFILE_PIC)
-                .userId(userId)
-                .build();
-        imageRepository.save(image);
-        return image;
+        try {
+            Map<String, Object> uploadResponse = objectMapper.convertValue(cloudinary.uploader()
+                    .upload(convertMultipartFileToFile(userProfileImage), ObjectUtils.emptyMap()), new TypeReference<Map<String, Object>>() {
+            });
+            Image image = Image.builder()
+                    .imageCategory(ImageCat.PROFILE_PIC)
+                    .userId(userId)
+                    .secureUrl((String) uploadResponse.get("secure_url"))
+                    .publicId((String) uploadResponse.get("public_id"))
+                    .build();
+            imageRepository.save(image);
+            return image;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public Optional<Image> getUserProfilePicture(long userId) {
-//        Image userProfilePic = imageRepository.findByUserId(userId);
-//        if (userProfilePic == null) {
-//            return Optional.empty();
-//        }
-//        try {
-//            byte[] uncompressedImage = ImageUtil.unCompressImage(userProfilePic.getImage());
-//            userProfilePic.setImage(uncompressedImage);
-//            userProfilePic.setSizeInBytes(uncompressedImage.length);
-//        } catch (DataFormatException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return Optional.of(userProfilePic);
-        return null;
+    public Image getUserProfilePicture(long userId) {
+        return imageRepository.findByUserId(userId);
     }
 
 

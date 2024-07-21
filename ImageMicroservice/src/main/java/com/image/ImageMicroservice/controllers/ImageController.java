@@ -44,11 +44,13 @@ public class ImageController {
 
     @PostMapping("/user")
     public ResponseEntity<Image> createUserProfileImage(@RequestParam("file") MultipartFile userProfilePic, @Param("userId") long userId) {
+        logger.debug("userId received in create profileImage endpoint : {}", userId);
         return new ResponseEntity<>(imageService.createUserProfileImage(userProfilePic, userId), HttpStatus.CREATED);
     }
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<?> getUsersProfileImage(@PathVariable long userId) {
+        logger.debug("entered get user profile with userId={}", userId);
         return new ResponseEntity<>(imageService.getUserProfilePicture(userId), HttpStatus.OK);
     }
 

@@ -25,6 +25,6 @@ public class User {
     @Column
     private String about;
 
-    @Column
-    private long profileImageId;
+    @Transient
+    private Image profilePicture;
 }
