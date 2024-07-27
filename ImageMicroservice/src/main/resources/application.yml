@@ -3,9 +3,7 @@ server:
 
 logging:
   level:
-    com:
-      image:
-        ImageMicroservice: TRACE
+    com.image.ImageMicroservice: TRACE
 
 spring:
   config:
