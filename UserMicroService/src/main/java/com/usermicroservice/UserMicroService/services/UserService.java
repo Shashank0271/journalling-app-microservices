@@ -19,6 +19,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 
 @Service
@@ -35,19 +36,27 @@ public class UserService {
 
         User savedUser = userRepository.save(user);
 
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.MULTIPART_FORM_DATA);
+        if(profilePic!=null){
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.setContentType(MediaType.MULTIPART_FORM_DATA);
 
-        MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
-        try {
-            body.add("file", new FileSystemResource(ImageUtil.convertMultipartFileToFile(profilePic)));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+            File profilePicFile ;
+
+            try {
+                profilePicFile  = ImageUtil.convertMultipartFileToFile(profilePic);
+                body.add("file", new FileSystemResource(profilePicFile));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            body.add("userId", savedUser.getId());
+            HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(body, httpHeaders);
+            ResponseEntity<Image> imageUploadResponse = restTemplate.postForEntity("http://localhost:9000/image/user", httpEntity, Image.class);
+            savedUser.setProfilePicture(imageUploadResponse.getBody());
+            ImageUtil.deleteFile(profilePicFile);
         }
-        body.add("userId", savedUser.getId());
-        HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(body, httpHeaders);
-        ResponseEntity<Image> imageUploadResponse = restTemplate.postForEntity("http://localhost:9000/image/user", httpEntity, Image.class);
-        savedUser.setProfilePicture(imageUploadResponse.getBody());
+
         return savedUser;
     }
 

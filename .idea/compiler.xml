@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apigateway" />
+        <module name="ConfigServer" />
+        <module name="ImageMicroservice" />
         <module name="JournalMicroService" />
         <module name="ServiceRegistry" />
-        <module name="ImageMicroservice" />
-        <module name="ConfigServer" />
         <module name="UserMicroService" />
       </profile>
     </annotationProcessing>

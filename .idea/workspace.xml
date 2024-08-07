@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="33f8556f-2ebc-4edd-8bc8-2c0f59063fc4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MicroServicesJounalingApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MicroServicesJournalingApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigServer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/services/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/services/UserService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2kJWbA4zsDcc1IVgyJL65q2EQ30" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CONFIGSERVER.executor": "Run",
+    "Application.IMAGESERVICE.executor": "Run",
+    "Application.JOURNALSERVICE.executor": "Run",
+    "Application.SERVICE-REGISTRY.executor": "Run",
+    "Application.USER-SERVICE.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/shashank/Downloads/MicroServicesJounalingApp",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "actions.on.save"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.CONFIGSERVER">
+    <configuration name="APIGATEWAY" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.springb.gateway.apigateway.ApigatewayApplication" />
+      <module name="apigateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CONFIGSERVER" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.ConfigServer.ConfigServerApplication" />
+      <module name="ConfigServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IMAGESERVICE" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.image.ImageMicroservice.ImageMicroserviceApplication" />
+      <module name="ImageMicroservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JOURNALSERVICE" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.journalmicroservice.JournalMicroService.JournalMicroServiceApplication" />
+      <module name="JournalMicroService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SERVICE-REGISTRY" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.serviceregistry.ServiceRegistry.ServiceRegistryApplication" />
+      <module name="ServiceRegistry" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="USER-SERVICE" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.usermicroservice.UserMicroService.UserMicroServiceApplication" />
+      <module name="UserMicroService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.USER-SERVICE" />
+      <item itemvalue="Application.APIGATEWAY" />
+      <item itemvalue="Application.CONFIGSERVER" />
+      <item itemvalue="Application.IMAGESERVICE" />
+      <item itemvalue="Application.SERVICE-REGISTRY" />
+      <item itemvalue="Application.JOURNALSERVICE" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33f8556f-2ebc-4edd-8bc8-2c0f59063fc4" name="Changes" comment="" />
+      <created>1723002228178</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723002228178</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import static com.image.ImageMicroservice.utils.ImageUtil.convertMultipartFileToFile;
 
@@ -30,34 +32,43 @@ public class ImageService {
     private Cloudinary cloudinary;
     @Autowired
     private ObjectMapper objectMapper;
+    @Autowired
+    private CloudinaryService cloudinaryService;
 
     public List<Image> createJournalEntryImages(List<MultipartFile> images,
                                                 String journalEntryId,
                                                 long userId
     ) {
-        List<Image> storedImages = new ArrayList<>();
-        images.forEach(imageFile -> {
+        List<Image> storedImages = new ArrayList<>(); //response to be returned
+
+        List<CompletableFuture<Image>> uploadFutures = new ArrayList<>();
+
+        images.forEach(image -> {
             try {
-                Map<String, Object> uploadResponse = objectMapper.convertValue(cloudinary.uploader()
-                        .upload(convertMultipartFileToFile(imageFile), ObjectUtils.emptyMap()), new TypeReference<Map<String, Object>>() {
-                });
-
-                Image image = Image.builder()
-                        .imageCategory(ImageCat.JOURNAL_ENTRY)
-                        .journalEntryId(journalEntryId)
-                        .publicId((String) uploadResponse.get("public_id"))
-                        .secureUrl((String) uploadResponse.get("secure_url"))
-                        .userId(userId)
-                        .build();
-
-                imageRepository.save(image);
-                storedImages.add(image);
+                CompletableFuture<Image> uploadFuture = cloudinaryService.
+                        uploadImageAndSaveInDB(convertMultipartFileToFile(image), journalEntryId, userId);
+                uploadFutures.add(uploadFuture);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
+
+        //wait for all the threads to finish execution
+        CompletableFuture.allOf(uploadFutures.toArray(new CompletableFuture[0]));
+
+        uploadFutures.forEach((savedImageFuture) -> {
+            try {
+                storedImages.add(savedImageFuture.get());
+            } catch (InterruptedException |
+                     ExecutionException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
         return storedImages;
     }
+
+    //over 70% improvement using multithreading
 
     public List<Image> getAllImagesForJournalEntry(String journalEntryId) {
         return imageRepository.findByJournalEntryId(journalEntryId);

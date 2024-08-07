@@ -7,3 +7,4 @@ spring:
         git:
           uri: https://github.com/Shashank0271/journal_microservice_config_server/
           clone-on-start: true
+

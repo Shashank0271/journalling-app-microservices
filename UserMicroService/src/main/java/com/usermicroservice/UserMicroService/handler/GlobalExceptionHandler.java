@@ -30,4 +30,16 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String , ?>> handleRunTimeException(RuntimeException runtimeException){
+        return new ResponseEntity<>(
+                new LinkedHashMap<>(){{
+                    put("message" , runtimeException.getMessage());
+                    put("success" , false);
+                    put("status" , HttpStatus.INTERNAL_SERVER_ERROR);
+                }},
+                HttpStatus.INTERNAL_SERVER_ERROR
+        );
+    }
+
 }
