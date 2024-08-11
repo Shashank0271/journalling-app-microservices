@@ -27,16 +27,25 @@ public class InvitationController {
         return ResponseEntity.ok(invitationService.acceptInvite(invitationId));
     }
 
+    @PostMapping("/decline/{invitationId}")
+    public ResponseEntity<Invitation> declineInvite(@PathVariable Long invitationId) {
+        return ResponseEntity.ok(invitationService.declineInvite(invitationId));
+    }
+
     @GetMapping("pending/journal/{journalId}")
     public ResponseEntity<List<Invitation>> getPendingInvitationsForJournalEntry(@PathVariable String journalId) {
-        return new ResponseEntity<>(invitationService.getPendingInvitationsForJournalEntry(journalId), HttpStatus.OK);
+        return ResponseEntity.ok(invitationService.getPendingInvitationsForJournalEntry(journalId));
     }
 
     @GetMapping("pending/user/{userId}")
     public ResponseEntity<List<Invitation>> getPendingInvitationsForUser(@PathVariable Long userId) {
-        return new ResponseEntity<>(invitationService.getPendingInvitationsForUserId(userId), HttpStatus.OK);
+        return ResponseEntity.ok(invitationService.getPendingInvitationsForUserId(userId));
     }
 
+    @GetMapping("accepted/user/{userId}")
+    public ResponseEntity<List<String>> getAcceptedJournalIdsForUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(invitationService.getAcceptedJournalIdsForUser(userId));
+    }
 
 }
 

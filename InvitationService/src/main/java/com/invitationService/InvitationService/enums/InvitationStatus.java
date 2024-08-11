@@ -1,5 +1,5 @@
 package com.invitationService.InvitationService.enums;
 
 public enum InvitationStatus {
-    PENDING, ACCEPTED
+    PENDING, ACCEPTED, DECLINED
 }

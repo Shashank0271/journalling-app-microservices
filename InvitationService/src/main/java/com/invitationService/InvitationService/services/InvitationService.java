@@ -28,10 +28,21 @@ public class InvitationService {
 
     public Invitation acceptInvite(Long pendingInvitationId) {
         Invitation pendingInvitation = invitationRepository.findPendingInvitationById(pendingInvitationId);
-        if (pendingInvitation == null) {
+        if (pendingInvitation == null || !pendingInvitation.getInvitationStatus()
+                .equals(InvitationStatus.PENDING)) {
             throw new RuntimeException("No pending invitation for id : " + pendingInvitationId);
         }
         pendingInvitation.setInvitationStatus(InvitationStatus.ACCEPTED);
+        return invitationRepository.save(pendingInvitation);
+    }
+
+    public Invitation declineInvite(Long invitationId) {
+        Invitation pendingInvitation = invitationRepository.findPendingInvitationById(invitationId);
+        if (pendingInvitation == null || !pendingInvitation.getInvitationStatus()
+                .equals(InvitationStatus.PENDING)) {
+            throw new RuntimeException("No pending invitation for id : " + invitationId);
+        }
+        pendingInvitation.setInvitationStatus(InvitationStatus.DECLINED);
         return invitationRepository.save(pendingInvitation);
     }
 
@@ -42,4 +53,9 @@ public class InvitationService {
     public List<Invitation> getPendingInvitationsForUserId(Long userId) {
         return invitationRepository.findPendingInvitationsByUserId(userId);
     }
+
+    public List<String> getAcceptedJournalIdsForUser(Long userId) {
+        return invitationRepository.getAcceptedJournalIdsForUser(userId);
+    }
+
 }
