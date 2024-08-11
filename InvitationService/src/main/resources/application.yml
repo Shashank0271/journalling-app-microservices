@@ -1,0 +1,9 @@
+spring:
+  config:
+    import:
+      - configserver:http://localhost:8085
+  profiles:
+    active:
+      - dev
+server:
+  port: 8086
