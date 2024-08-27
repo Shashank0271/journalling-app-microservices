@@ -1,0 +1,19 @@
+#right click on project folder -> rebuild module
+server:
+  port: 8087
+
+logging:
+  level:
+    com.example.authservice: TRACE
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone:
+        http://localhost:8761/eureka
+
+
