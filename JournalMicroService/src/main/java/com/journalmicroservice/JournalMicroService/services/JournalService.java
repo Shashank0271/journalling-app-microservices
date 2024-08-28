@@ -7,9 +7,9 @@ import com.journalmicroservice.JournalMicroService.entities.Image;
 import com.journalmicroservice.JournalMicroService.entities.JournalEntry;
 import com.journalmicroservice.JournalMicroService.repository.JournalRepository;
 import com.journalmicroservice.JournalMicroService.utils.ImageUtil;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -29,21 +29,19 @@ import java.util.*;
 import static com.journalmicroservice.JournalMicroService.utils.ImageUtil.convertMultipartFileToFile;
 
 @Service
+@RequiredArgsConstructor
 public class JournalService {
     final static Logger logger = LoggerFactory.getLogger(JournalService.class);
-    @Autowired
-    private JournalRepository journalRepository;
-    @Autowired
-    private RestTemplate restTemplate;
-    @Autowired
-    private ObjectMapper objectMapper;
+
+    private final JournalRepository journalRepository;
+    private final RestTemplate restTemplate;
+    private final ObjectMapper objectMapper;
 
     //works
-    public JournalEntry createEntry(List<MultipartFile> multipartFiles, String userName, int userId, String content) {
+    public JournalEntry createEntry(List<MultipartFile> multipartFiles, String userName, Long userId, String content) {
         String journalEntryId = UUID.randomUUID()
                 .toString();
-
-
+        
         List<File> imageFiles = multipartFiles != null ? multipartFiles.stream()
                 .map(imageFile -> {
                     try {
@@ -98,7 +96,6 @@ public class JournalService {
     //works
     public JournalEntry getEntry(String journalEntryId) {
         Optional<JournalEntry> journalEntry = journalRepository.findByEntryId(journalEntryId);
-        logger.debug("entered get entry service");
         if (journalEntry.isEmpty()) {
             throw new JournalEntryNotFoundException(journalEntryId);
         }
@@ -110,7 +107,31 @@ public class JournalService {
     }
 
     //works
-    public List<JournalEntry> getEntriesByUserId(int userId) {
+    public List<JournalEntry> getEntriesByUserId(Long userId) {
+        List<JournalEntry> journalEntries = journalRepository.findByUserId(userId);
+        addImagesToJournalEntries(journalEntries);
+        return journalEntries;
+    }
+
+    public List<JournalEntry> getSharedEntriesByUserId(Long userId) {
+        List<String> journalIds =
+                objectMapper.convertValue(restTemplate.getForObject("http://localhost:8086/invitation/accepted/user/" + userId, List.class)
+                        , new TypeReference<List<String>>() {
+                        });
+
+        List<JournalEntry> journalEntries = journalRepository.findAllEntriesHavingIdIn(journalIds);
+        addImagesToJournalEntries(journalEntries);
+        return journalEntries;
+    }
+
+    //works
+    public void deleteJournalEntryById(String journalEntryId) {
+        journalRepository.deleteById(journalEntryId);
+        restTemplate.delete("http://localhost:9000/image/journal/" + journalEntryId);
+    }
+
+
+    private void addImagesToJournalEntries(List<JournalEntry> journalEntries) {
         /* the images won't be coming along with the entries
                 HOW TO SOLVE THIS: BATCH PROCESSING
                 1> fetch all the journal entries from the database for the required users
@@ -119,15 +140,14 @@ public class JournalService {
                 4> fetch all the required images from the image service
                 5> when we get the response here we can map the images to the respective journalEntry images list
          */
-        List<JournalEntry> journalEntries = journalRepository.findByUserId(userId);
         Set<String> journalEntryIds = new HashSet<>();
         journalEntries.forEach(journalEntry -> {
             journalEntryIds.add(journalEntry.getEntryId());
         });
-        String url = "http://localhost:9000/image/journal-entries";
-        HttpEntity<Set> httpEntity = new HttpEntity<>(journalEntryIds);
-        ResponseEntity<List> response = restTemplate.postForEntity(url, httpEntity, List.class);
 
+        String url = "http://localhost:9000/image/journal-entries";
+        HttpEntity<Set<String>> httpEntity = new HttpEntity<>(journalEntryIds);
+        ResponseEntity<List> response = restTemplate.postForEntity(url, httpEntity, List.class);
         List<Image> images = objectMapper.convertValue(response.getBody(), new TypeReference<List<Image>>() {
         });
 
@@ -137,7 +157,7 @@ public class JournalService {
 
         journalEntryIds.forEach((entryId) -> entries.put(entryId, new ArrayList<>()));
 
-        for (Image image : images) { //image is of type LinkedHashMap
+        for (Image image : images) { //aggregate all the images for one journal entry id
             String journalId = image.getJournalEntryId();
             entries.get(journalId)
                     .add(image);
@@ -150,13 +170,6 @@ public class JournalService {
                 journalEntry.setImages(entries.get(journalEntry.getEntryId()));
         });
 
-        return journalEntries;
-    }
-
-    //works
-    public void deleteJournalEntryById(String journalEntryId) {
-        journalRepository.deleteById(journalEntryId);
-        restTemplate.delete("http://localhost:9000/image/journal/" + journalEntryId);
     }
 
 }

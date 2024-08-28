@@ -4,12 +4,14 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/UserMicroService/pom.xml" />
-        <option value="$PROJECT_DIR$/JournalMicroService/pom.xml" />
-        <option value="$PROJECT_DIR$/ServiceRegistry/pom.xml" />
-        <option value="$PROJECT_DIR$/ImageMicroservice/pom.xml" />
-        <option value="$PROJECT_DIR$/apigateway/pom.xml" />
+        <option value="$PROJECT_DIR$/ApiGateway/pom.xml" />
         <option value="$PROJECT_DIR$/ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/ServiceRegistry/pom.xml" />
+        <option value="$PROJECT_DIR$/UserMicroService/pom.xml" />
+        <option value="$PROJECT_DIR$/ImageMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/InvitationService/pom.xml" />
+        <option value="$PROJECT_DIR$/JournalMicroService/pom.xml" />
+        <option value="$PROJECT_DIR$/AuthenticationService/pom.xml" />
       </list>
     </option>
   </component>

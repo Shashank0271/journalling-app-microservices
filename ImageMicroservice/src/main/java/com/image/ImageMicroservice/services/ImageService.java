@@ -37,7 +37,7 @@ public class ImageService {
 
     public List<Image> createJournalEntryImages(List<MultipartFile> images,
                                                 String journalEntryId,
-                                                long userId
+                                                String userId
     ) {
         List<Image> storedImages = new ArrayList<>(); //response to be returned
 
@@ -93,7 +93,7 @@ public class ImageService {
         imageRepository.deleteImagesHavingJournalEntryId(journalEntryId);
     }
 
-    public Image createUserProfileImage(MultipartFile userProfileImage, long userId) {
+    public Image createUserProfileImage(MultipartFile userProfileImage, String userId) {
         try {
             Map<String, Object> uploadResponse = objectMapper.convertValue(cloudinary.uploader()
                     .upload(convertMultipartFileToFile(userProfileImage), ObjectUtils.emptyMap()), new TypeReference<Map<String, Object>>() {
@@ -111,7 +111,7 @@ public class ImageService {
         }
     }
 
-    public Image getUserProfilePicture(long userId) {
+    public Image getUserProfilePicture(String userId) {
         return imageRepository.findByUserId(userId);
     }
 

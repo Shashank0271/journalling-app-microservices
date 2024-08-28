@@ -30,7 +30,7 @@ public class JournalEntry {
     @Column(nullable = false)
     @NotBlank(message = "userName cant be blank !")
     private String userName;
-    private int userId;
+    private Long userId;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDateTime createdAt;
     @Transient

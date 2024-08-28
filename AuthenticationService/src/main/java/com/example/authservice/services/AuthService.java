@@ -7,6 +7,7 @@ import com.example.authservice.dtos.UserDTO;
 import com.example.authservice.entities.User;
 import com.example.authservice.utils.ImageUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpEntity;
@@ -28,6 +29,7 @@ import java.io.IOException;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
@@ -40,8 +42,9 @@ public class AuthService {
                 new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword())
         );
         User currentUser = (User) authentication.getPrincipal();
+
         UserDTO currentUserDTO = modelMapper.map(currentUser, UserDTO.class);
-        String jwtToken = jwtService.generateAccessToken(currentUser);
+        String jwtToken = jwtService.generateAccessToken(currentUserDTO);
         return AuthResponseDTO.builder()
                 .jwtToken(jwtToken)
                 .user(currentUserDTO)
@@ -79,11 +82,10 @@ public class AuthService {
             throw new RuntimeException("error in signing up the user");
         }
 
-        User registeredUser = modelMapper.map(registeredUserResponse.getBody(), User.class);
-        UserDTO registeredUserDTO = modelMapper.map(registeredUser, UserDTO.class);
-        assert registeredUser != null;
 
-        String jwtToken = jwtService.generateAccessToken(registeredUser);
+        UserDTO registeredUserDTO = modelMapper.map(registeredUserResponse.getBody(), UserDTO.class);
+
+        String jwtToken = jwtService.generateAccessToken(registeredUserDTO);
         return AuthResponseDTO.builder()
                 .jwtToken(jwtToken)
                 .user(registeredUserDTO)

@@ -16,8 +16,10 @@ public class User implements UserDetails {
 
     private String email;
     private String password;
-    private String userName;
+    private String username;
     private String id;
+    private String about;
+    private Image profilePicture;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -33,4 +35,9 @@ public class User implements UserDetails {
     public String getUsername() {
         return this.getEmail();
     }
+
+    public String getName(){
+        return this.username ;
+    }
+
 }

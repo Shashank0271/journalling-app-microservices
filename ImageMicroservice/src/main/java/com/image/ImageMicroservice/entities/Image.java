@@ -23,7 +23,7 @@ public class Image {
     private ImageCat imageCategory;
 
     @Column(name = "user_id")
-    private Long userId;
+    private String userId;
 
     @Column(nullable = true, name = "journal_entry_id")
     private String journalEntryId;

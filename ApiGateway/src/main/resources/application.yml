@@ -10,14 +10,22 @@ spring:
             uri: lb://IMAGEMICROSERVICE
             predicates:
               - Path=/image/**
+
           - id: JOURNALSERVICE
             uri: lb://JOURNALMICROSERVICE
             predicates:
               - Path=/journal/**
+
           - id: USERSERVICE
             uri: lb://USERMICROSERVICE
             predicates:
               - Path=/user/**
+
+          - id: INVITATIONSERVICE
+#            uri: lb://INVITATIONSERVICE
+            uri: http://localhost:8086/invitation
+            predicates:
+              - Path=/invitation/**
 
 eureka:
   client:

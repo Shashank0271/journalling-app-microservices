@@ -1,5 +1,6 @@
 package com.example.authservice.dtos;
 
+import com.example.authservice.entities.Image;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +13,8 @@ import lombok.NoArgsConstructor;
 public class UserDTO {
     private String email;
     private String password;
-    private String userName;
+    private String username;
     private String id;
+    private String about;
+    private Image profilePicture;
 }

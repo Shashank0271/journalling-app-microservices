@@ -13,7 +13,7 @@ import java.util.List;
 public interface ImageRepository extends JpaRepository<Image, Long> {
     List<Image> findByJournalEntryId(String journalEntryId);
 
-    Image findByUserId(long userId);
+    Image findByUserId(String userId);
 
     @Query("SELECT m FROM Image m WHERE m.journalEntryId IN :jids")
     List<Image> findAllImagesForJournalIds(@Param("jids") ArrayList<String> journalIds);

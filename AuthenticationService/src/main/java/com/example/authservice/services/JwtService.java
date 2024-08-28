@@ -1,6 +1,7 @@
 package com.example.authservice.services;
 
 
+import com.example.authservice.dtos.UserDTO;
 import com.example.authservice.entities.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -18,7 +19,7 @@ public class JwtService {
     @Value("${jwt.secretKey}")
     private String secretKey;
 
-    public String generateAccessToken(User user) {
+    public String generateAccessToken(UserDTO user) {
         return Jwts.builder().
                 subject(user.getId()).
                 claim("email", user.getEmail()).

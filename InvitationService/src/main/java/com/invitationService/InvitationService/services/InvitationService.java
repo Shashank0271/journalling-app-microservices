@@ -24,6 +24,7 @@ public class InvitationService {
                         .invitationStatus(InvitationStatus.PENDING)
                         .build()))
                 .collect(Collectors.toList());
+        //TODO push task to notification-service
     }
 
     public Invitation acceptInvite(Long pendingInvitationId) {

@@ -8,18 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apigateway" />
-        <module name="ConfigServer" />
         <module name="ImageMicroservice" />
         <module name="JournalMicroService" />
+        <module name="ConfigServer" />
         <module name="ServiceRegistry" />
+        <module name="InvitationService" />
+        <module name="AuthenticationService" />
         <module name="UserMicroService" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthenticationService" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="ImageMicroservice" options="-parameters" />
+      <module name="InvitationService" options="-parameters" />
       <module name="JournalMicroService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
       <module name="UserMicroService" options="-parameters" />

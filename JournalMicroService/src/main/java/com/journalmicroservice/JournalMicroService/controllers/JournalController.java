@@ -12,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-
 @RequestMapping("/journal")
 @RestController
 public class JournalController {
@@ -24,7 +23,7 @@ public class JournalController {
     public ResponseEntity<?> createEntry(
             @RequestPart(required = false, name = "images") List<MultipartFile> images,
             @RequestParam(name = "userName") String userName,
-            @RequestParam(name = "userId") int userId,
+            @RequestParam(name = "userId") Long userId,
             @RequestParam(name = "content") String content
     ) {
         return new ResponseEntity<>(journalService.createEntry(images, userName, userId, content), HttpStatus.CREATED);
@@ -36,7 +35,7 @@ public class JournalController {
     }
 
     @GetMapping("user/{userId}")
-    public ResponseEntity<List<JournalEntry>> getEntriesByUserId(@PathVariable int userId) {
+    public ResponseEntity<List<JournalEntry>> getEntriesByUserId(@PathVariable Long userId) {
         return new ResponseEntity<>(journalService.getEntriesByUserId(userId), HttpStatus.OK);
     }
 
@@ -45,4 +44,10 @@ public class JournalController {
         journalService.deleteJournalEntryById(journalEntryId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("/shared/{userId}")
+    public ResponseEntity<List<JournalEntry>> getAcceptedUserEntries(@PathVariable Long userId) {
+        return ResponseEntity.ok(journalService.getSharedEntriesByUserId(userId));
+    }
+
 }

@@ -4,21 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33f8556f-2ebc-4edd-8bc8-2c0f59063fc4" name="Changes" comment="">
+    <list default="true" id="8de787a9-ac41-4456-a2cb-9a54417c9264" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/src/test/java/com/springb/gateway/apigateway/ApigatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/test/java/com/springb/gateway/apigateway/ApigatewayApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/dtos/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/dtos/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/controllers/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/entities/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/entities/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/services/CloudinaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/services/CloudinaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ImageMicroservice/src/main/java/com/image/ImageMicroservice/services/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/controllers/InvitationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/controllers/InvitationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/services/InvitationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/services/InvitationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/controllers/JournalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/controllers/JournalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/entities/JournalEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/entities/JournalEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/repository/JournalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/repository/JournalRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/services/JournalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/src/main/java/com/journalmicroservice/JournalMicroService/services/JournalService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserMicroService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/Exceptions/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/Exceptions/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMicroService/src/test/java/com/usermicroservice/UserMicroService/UserMicroServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMicroService/src/test/java/com/usermicroservice/UserMicroService/UserMicroServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -29,72 +53,60 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2kJWbA4zsDcc1IVgyJL65q2EQ30" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2lHSwgUasGlILEgk3QDkptWfaek" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CONFIGSERVER.executor&quot;: &quot;Run&quot;,
-    &quot;Application.IMAGESERVICE.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JOURNALSERVICE.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SERVICE-REGISTRY.executor&quot;: &quot;Run&quot;,
-    &quot;Application.USER-SERVICE.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/shashank/Downloads/MicroServicesJounalingApp&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Auth.executor": "Debug",
+    "Application.ConfigServer.executor": "Run",
+    "Application.ImageService.executor": "Run",
+    "Application.UserService.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/shashank/Downloads/MicroServicesJounalingApp",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save"
   }
-}</component>
-  <component name="RunManager" selected="Application.IMAGESERVICE">
-    <configuration name="APIGATEWAY" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.springb.gateway.apigateway.ApigatewayApplication" />
-      <module name="apigateway" />
+}]]></component>
+  <component name="RunManager" selected="Application.Auth">
+    <configuration name="Auth" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.authservice.AuthserviceApplication" />
+      <module name="AuthenticationService" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CONFIGSERVER" type="Application" factoryName="Application">
+    <configuration name="ConfigServer" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.ConfigServer.ConfigServerApplication" />
       <module name="ConfigServer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IMAGESERVICE" type="Application" factoryName="Application">
+    <configuration name="ImageService" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.image.ImageMicroservice.ImageMicroserviceApplication" />
       <module name="ImageMicroservice" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JOURNALSERVICE" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.journalmicroservice.JournalMicroService.JournalMicroServiceApplication" />
-      <module name="JournalMicroService" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SERVICE-REGISTRY" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.serviceregistry.ServiceRegistry.ServiceRegistryApplication" />
-      <module name="ServiceRegistry" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="USER-SERVICE" type="Application" factoryName="Application">
+    <configuration name="UserService" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.usermicroservice.UserMicroService.UserMicroServiceApplication" />
       <module name="UserMicroService" />
       <method v="2">
@@ -102,23 +114,67 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.USER-SERVICE" />
-      <item itemvalue="Application.APIGATEWAY" />
-      <item itemvalue="Application.CONFIGSERVER" />
-      <item itemvalue="Application.IMAGESERVICE" />
-      <item itemvalue="Application.SERVICE-REGISTRY" />
-      <item itemvalue="Application.JOURNALSERVICE" />
+      <item itemvalue="Application.Auth" />
+      <item itemvalue="Application.UserService" />
+      <item itemvalue="Application.ConfigServer" />
+      <item itemvalue="Application.ImageService" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="33f8556f-2ebc-4edd-8bc8-2c0f59063fc4" name="Changes" comment="" />
-      <created>1723002228178</created>
+      <changelist id="8de787a9-ac41-4456-a2cb-9a54417c9264" name="Changes" comment="" />
+      <created>1724835748596</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1723002228178</updated>
+      <updated>1724835748596</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/AuthService.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

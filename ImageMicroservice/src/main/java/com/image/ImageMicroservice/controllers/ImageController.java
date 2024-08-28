@@ -25,7 +25,7 @@ public class ImageController {
     @PostMapping("/journal")
     public ResponseEntity<List<Image>> createJournalEntryImages(@RequestPart("files") List<MultipartFile> images,
                                                                 @RequestParam("journalId") String journalEntryId,
-                                                                @RequestParam("userId") long userId
+                                                                @RequestParam("userId") String userId
 
     ) {
         logger.debug("JournalEntryId received in createJournalEntryImages controller : {}", journalEntryId);
@@ -43,13 +43,13 @@ public class ImageController {
     }
 
     @PostMapping("/user")
-    public ResponseEntity<Image> createUserProfileImage(@RequestParam("file") MultipartFile userProfilePic, @Param("userId") long userId) {
+    public ResponseEntity<Image> createUserProfileImage(@RequestParam("file") MultipartFile userProfilePic, @Param("userId") String userId) {
         logger.debug("userId received in create profileImage endpoint : {}", userId);
         return new ResponseEntity<>(imageService.createUserProfileImage(userProfilePic, userId), HttpStatus.CREATED);
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<?> getUsersProfileImage(@PathVariable long userId) {
+    public ResponseEntity<?> getUsersProfileImage(@PathVariable String userId) {
         logger.debug("entered get user profile with userId={}", userId);
         return new ResponseEntity<>(imageService.getUserProfilePicture(userId), HttpStatus.OK);
     }

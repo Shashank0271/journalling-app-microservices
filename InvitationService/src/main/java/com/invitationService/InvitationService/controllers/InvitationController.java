@@ -44,15 +44,8 @@ public class InvitationController {
 
     @GetMapping("accepted/user/{userId}")
     public ResponseEntity<List<String>> getAcceptedJournalIdsForUser(@PathVariable Long userId) {
+        //this is called by the journal-service
         return ResponseEntity.ok(invitationService.getAcceptedJournalIdsForUser(userId));
     }
 
 }
-
-/*
-
-a user is supposed to invite others to view a journal entry
-other users are supposed to accept that invite
-when they accept they can get access to view and comment on that journalEntry
-
- */

@@ -1,8 +1,9 @@
 package com.usermicroservice.UserMicroService.controller;
 
+import com.usermicroservice.UserMicroService.dtos.SignupDTO;
 import com.usermicroservice.UserMicroService.entities.User;
 import com.usermicroservice.UserMicroService.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,20 +11,20 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    UserService userService;
+    private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@ModelAttribute User user, @RequestParam("file") MultipartFile profilePic) {
-        User createdUser = userService.saveUserInDb(user, profilePic);
+    public ResponseEntity<User> createUser(@ModelAttribute SignupDTO signupDTO, @RequestParam(value = "file", required = false) MultipartFile profilePic) {
+        User createdUser = userService.saveUserInDb(signupDTO, profilePic);
         return new ResponseEntity<>(createdUser, HttpStatus.OK);
     }
 
-    @GetMapping("/{userId}")
-    public ResponseEntity<User> getUserByUserId(@PathVariable long userId) {
-        User requiredUser = userService.getUserByUserId(userId);
+    @GetMapping("/{email}")
+    public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
+        User requiredUser = userService.getUserByEmail(email);
         return new ResponseEntity<>(requiredUser, HttpStatus.OK);
     }
 
