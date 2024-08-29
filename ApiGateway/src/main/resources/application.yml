@@ -4,28 +4,40 @@ server:
 spring:
   cloud:
     gateway:
-      mvc:
-        routes:
-          - id: IMAGESERVICE
-            uri: lb://IMAGEMICROSERVICE
-            predicates:
-              - Path=/image/**
+      routes:
+        - id: AUTHSERVICE
+          uri: http://localhost:8087/auth
+          predicates:
+            - Path=/auth/**
 
-          - id: JOURNALSERVICE
-            uri: lb://JOURNALMICROSERVICE
-            predicates:
-              - Path=/journal/**
+        - id: IMAGESERVICE
+          uri: lb://IMAGEMICROSERVICE
+          predicates:
+            - Path=/image/**
 
-          - id: USERSERVICE
-            uri: lb://USERMICROSERVICE
-            predicates:
-              - Path=/user/**
+        - id: JOURNALSERVICE
+          uri: lb://JOURNALMICROSERVICE
+          predicates:
+            - Path=/journal/**
+          filters:
+            - AuthFilter
 
-          - id: INVITATIONSERVICE
-#            uri: lb://INVITATIONSERVICE
-            uri: http://localhost:8086/invitation
-            predicates:
-              - Path=/invitation/**
+        - id: USERSERVICE
+          uri: lb://USERMICROSERVICE
+          predicates:
+            - Path=/user/**
+          filters:
+            - AuthFilter
+
+        - id: INVITATIONSERVICE
+          #            uri: lb://INVITATIONSERVICE
+          uri: http://localhost:8086/invitation
+          predicates:
+            - Path=/invitation/**
+          filters:
+            - AuthFilter
+
+
 
 eureka:
   client:

@@ -35,7 +35,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         }
 
         String token = requestTokenHeader.substring(7);
-        long userId = Long.parseLong(jwtService.getUserIdFromToken(token));
+
+        final long userId = Long.parseLong(jwtService.getUserIdFromToken(token));
 
         if (SecurityContextHolder.getContext()
                 .getAuthentication() == null) {

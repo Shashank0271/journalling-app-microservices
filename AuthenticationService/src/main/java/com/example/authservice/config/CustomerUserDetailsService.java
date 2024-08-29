@@ -17,15 +17,15 @@ import org.springframework.web.client.RestTemplate;
 public class CustomerUserDetailsService implements UserDetailsService {
 
     private final RestTemplate restTemplate;
-    private final ModelMapper modelMapper ;
+    private final ModelMapper modelMapper;
+
     @Override
     public User loadUserByUsername(String email) throws UsernameNotFoundException {
         ResponseEntity<UserDTO> userResponseEntity = restTemplate.getForEntity("http://localhost:8080/user/" + email, UserDTO.class);
-        log.debug(userResponseEntity.getBody().getUsername());
         if (!userResponseEntity.getStatusCode()
                 .is2xxSuccessful()) {
             throw new RuntimeException("user with emailId " + email + " does not exist");
         }
-        return modelMapper.map(userResponseEntity.getBody() , User.class);
+        return modelMapper.map(userResponseEntity.getBody(), User.class);
     }
 }

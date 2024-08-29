@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AuthenticationService/AuthenticationService.iml" filepath="$PROJECT_DIR$/AuthenticationService/AuthenticationService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageMicroservice/ImageMicroservice.iml" filepath="$PROJECT_DIR$/ImageMicroservice/ImageMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InvitationService/InvitationService.iml" filepath="$PROJECT_DIR$/InvitationService/InvitationService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JournalMicroService/JournalMicroService.iml" filepath="$PROJECT_DIR$/JournalMicroService/JournalMicroService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MicroServicesJounalingApp.iml" filepath="$PROJECT_DIR$/.idea/MicroServicesJounalingApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/UserMicroService/UserMicroService.iml" filepath="$PROJECT_DIR$/UserMicroService/UserMicroService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ApiGateway/apigateway.iml" filepath="$PROJECT_DIR$/ApiGateway/apigateway.iml" />
     </modules>
   </component>
 </project>
