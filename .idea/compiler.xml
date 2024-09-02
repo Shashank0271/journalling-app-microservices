@@ -10,6 +10,7 @@
         <module name="apigateway" />
         <module name="ImageMicroservice" />
         <module name="JournalMicroService" />
+        <module name="NotificationService" />
         <module name="ConfigServer" />
         <module name="ServiceRegistry" />
         <module name="InvitationService" />
@@ -25,6 +26,7 @@
       <module name="ImageMicroservice" options="-parameters" />
       <module name="InvitationService" options="-parameters" />
       <module name="JournalMicroService" options="-parameters" />
+      <module name="NotificationService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
       <module name="UserMicroService" options="-parameters" />
       <module name="apigateway" options="-parameters" />

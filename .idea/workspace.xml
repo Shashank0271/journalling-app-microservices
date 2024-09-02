@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8de787a9-ac41-4456-a2cb-9a54417c9264" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/filters/AuthFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/utils/JwtValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/utils/RouteValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/exceptions/InvalidJwtException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/exceptions/MissingAuthHeaderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/handler/GatewayError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/filters/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/filters/AuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/config/CustomerUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/filters/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/filters/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/com/example/authservice/services/JwtService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +56,10 @@
     "Application.ImageService.executor": "Run",
     "Application.InvitationService.executor": "Run",
     "Application.JournalService.executor": "Run",
-    "Application.UserService.executor": "Run",
+    "Application.NotificationService.executor": "Run",
+    "Application.UserService.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -65,7 +68,12 @@
     "settings.editor.selected.configurable": "actions.on.save"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ApiGateway">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.NotificationService.services.implementation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.NotificationService">
     <configuration name="ApiGateway" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -129,6 +137,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotificationService" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.NotificationService.NotificationServiceApplication" />
+      <module name="NotificationService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserService" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -142,6 +159,7 @@
       <item itemvalue="Application.Auth" />
       <item itemvalue="Application.UserService" />
       <item itemvalue="Application.ApiGateway" />
+      <item itemvalue="Application.NotificationService" />
       <item itemvalue="Application.JournalService" />
       <item itemvalue="Application.InvitationService" />
       <item itemvalue="Application.ConfigServer" />
@@ -159,5 +177,27 @@
       <updated>1724835748596</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserMicroService/src/main/java/com/usermicroservice/UserMicroService/services/UserService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

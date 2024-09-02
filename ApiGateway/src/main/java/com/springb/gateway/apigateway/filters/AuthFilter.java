@@ -1,5 +1,7 @@
 package com.springb.gateway.apigateway.filters;
 
+import com.springb.gateway.apigateway.exceptions.InvalidJwtException;
+import com.springb.gateway.apigateway.exceptions.MissingAuthHeaderException;
 import com.springb.gateway.apigateway.utils.JwtValidator;
 import com.springb.gateway.apigateway.utils.RouteValidator;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +34,7 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
                         .getHeaders()
                         .containsKey(HttpHeaders.AUTHORIZATION)) {
                     log.error("missing auth header");
-                    throw new RuntimeException("missing authorization header");
+                    throw new MissingAuthHeaderException("missing authorization header");
                 }
 
                 String authHeader = exchange.getRequest()
@@ -47,7 +49,7 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
                         jwtValidator.validateToken(jwtToken);
                     } catch (Exception e) {
                         log.error("not authorized\t\t{}", String.valueOf(e));
-                        throw new RuntimeException("not authorized !");
+                        throw new InvalidJwtException("JWT validation failed.");
                     }
                 }
             }
