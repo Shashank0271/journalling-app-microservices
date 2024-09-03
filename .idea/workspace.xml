@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8de787a9-ac41-4456-a2cb-9a54417c9264" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/controllers/InvitationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/controllers/InvitationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/dtos/CreateInviteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/dtos/CreateInviteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/entities/Invitation.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/entities/Invitation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/repositories/InvitationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/repositories/InvitationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/services/InvitationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/services/InvitationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JournalMicroService/src/test/java/com/journalmicroservice/JournalMicroService/JournalMicroServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/src/test/java/com/journalmicroservice/JournalMicroService/JournalMicroServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotificationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/controllers/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/controllers/EmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/services/implementation/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/services/implementation/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotificationService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +37,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2lHSwgUasGlILEgk3QDkptWfaek" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,6 +48,7 @@
   "keyToString": {
     "Application.ApiGateway.executor": "Run",
     "Application.Auth.executor": "Run",
+    "Application.CommentService.executor": "Run",
     "Application.ConfigServer.executor": "Run",
     "Application.EurekaServer.executor": "Run",
     "Application.ImageService.executor": "Run",
@@ -80,7 +77,7 @@
       <recent name="com.invitationService.InvitationService.dtos" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NotificationService">
+  <component name="RunManager" selected="Application.CommentService">
     <configuration name="ApiGateway" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -95,6 +92,15 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.authservice.AuthserviceApplication" />
       <module name="AuthenticationService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentService" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.CommentService.CommentServiceApplication" />
+      <module name="CommentService" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,6 +173,7 @@
       <item itemvalue="Application.UserService" />
       <item itemvalue="Application.ApiGateway" />
       <item itemvalue="Application.NotificationService" />
+      <item itemvalue="Application.CommentService" />
       <item itemvalue="Application.JournalService" />
       <item itemvalue="Application.InvitationService" />
       <item itemvalue="Application.ConfigServer" />

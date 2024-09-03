@@ -10,6 +10,7 @@
         <module name="apigateway" />
         <module name="ImageMicroservice" />
         <module name="JournalMicroService" />
+        <module name="CommentService" />
         <module name="NotificationService" />
         <module name="ConfigServer" />
         <module name="ServiceRegistry" />
@@ -22,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AuthenticationService" options="-parameters" />
+      <module name="CommentService" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="ImageMicroservice" options="-parameters" />
       <module name="InvitationService" options="-parameters" />
