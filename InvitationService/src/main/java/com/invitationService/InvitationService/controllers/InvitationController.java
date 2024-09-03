@@ -37,15 +37,15 @@ public class InvitationController {
         return ResponseEntity.ok(invitationService.getPendingInvitationsForJournalEntry(journalId));
     }
 
-    @GetMapping("pending/user/{userId}")
-    public ResponseEntity<List<Invitation>> getPendingInvitationsForUser(@PathVariable Long userId) {
-        return ResponseEntity.ok(invitationService.getPendingInvitationsForUserId(userId));
+    @GetMapping("pending/user/{email}")
+    public ResponseEntity<List<Invitation>> getPendingInvitationsForUser(@PathVariable String email) {
+        return ResponseEntity.ok(invitationService.getPendingInvitationsForUserEmail(email));
     }
 
-    @GetMapping("accepted/user/{userId}")
-    public ResponseEntity<List<String>> getAcceptedJournalIdsForUser(@PathVariable Long userId) {
+    @GetMapping("accepted/user/{email}")
+    public ResponseEntity<List<String>> getAcceptedJournalIdsForUser(@PathVariable String email) {
         //this is called by the journal-service
-        return ResponseEntity.ok(invitationService.getAcceptedJournalIdsForUser(userId));
+        return ResponseEntity.ok(invitationService.getAcceptedJournalIdsForUser(email));
     }
 
 }

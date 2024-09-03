@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8de787a9-ac41-4456-a2cb-9a54417c9264" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/exceptions/InvalidJwtException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/exceptions/MissingAuthHeaderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/handler/GatewayError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/filters/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/springb/gateway/apigateway/filters/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/controllers/InvitationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/controllers/InvitationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/dtos/CreateInviteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/dtos/CreateInviteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/entities/Invitation.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/entities/Invitation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/repositories/InvitationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/repositories/InvitationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/services/InvitationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/java/com/invitationService/InvitationService/services/InvitationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvitationService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/InvitationService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JournalMicroService/src/test/java/com/journalmicroservice/JournalMicroService/JournalMicroServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/JournalMicroService/src/test/java/com/journalmicroservice/JournalMicroService/JournalMicroServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotificationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/controllers/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/controllers/EmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/services/implementation/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService/services/implementation/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotificationService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/NotificationService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,14 +64,20 @@
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/shashank/Downloads/MicroServicesJounalingApp",
+    "last_opened_file_path": "/home/shashank/Downloads/MicroServicesJounalingApp/NotificationService/src/main/java/com/example/NotificationService",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "actions.on.save"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/NotificationService/src/main/java/com/example/NotificationService" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.NotificationService.services.implementation" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.invitationService.InvitationService.dtos" />
     </key>
   </component>
   <component name="RunManager" selected="Application.NotificationService">

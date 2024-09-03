@@ -28,6 +28,7 @@ public class EmailServiceImpl implements EmailService {
                 String[] bccArray = bccList.toArray(new String[0]);
                 simpleMailMessage.setBcc(bccArray);
             }
+
             simpleMailMessage.setSubject(subject);
             simpleMailMessage.setText(body);
 

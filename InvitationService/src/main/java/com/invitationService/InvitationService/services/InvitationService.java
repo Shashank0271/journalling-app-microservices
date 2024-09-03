@@ -1,8 +1,10 @@
 package com.invitationService.InvitationService.services;
 
 import com.invitationService.InvitationService.dtos.CreateInviteDTO;
+import com.invitationService.InvitationService.dtos.MessageDto;
 import com.invitationService.InvitationService.entities.Invitation;
 import com.invitationService.InvitationService.enums.InvitationStatus;
+import com.invitationService.InvitationService.messaging.InvitationMessageProducer;
 import com.invitationService.InvitationService.repositories.InvitationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,17 +16,30 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class InvitationService {
     private final InvitationRepository invitationRepository;
+    private final InvitationMessageProducer invitationMessageProducer;
 
     public List<Invitation> createInvite(CreateInviteDTO createInviteDTO) {
-        return createInviteDTO.getUserIds()
+
+        // push task to notification-service
+        MessageDto messageDto = MessageDto.builder()
+                .emails(createInviteDTO.getUserEmails())
+                .journalId(createInviteDTO.getJournalId())
+                .subject("Journal Entry invitation")
+                .body("You have been invited to view journal with id :" + createInviteDTO.getJournalId())
+                .build();
+
+        invitationMessageProducer.sendMessage(messageDto);
+
+        // save and return the entries in the database with invite status sent to 'pending'
+        return createInviteDTO.getUserEmails()
                 .stream()
-                .map((userId) -> invitationRepository.save(Invitation.builder()
-                        .userId(userId)
+                .map((userEmail) -> invitationRepository.save(Invitation.builder()
+                        .userEmail(userEmail)
                         .journalId(createInviteDTO.getJournalId())
                         .invitationStatus(InvitationStatus.PENDING)
                         .build()))
                 .collect(Collectors.toList());
-        //TODO push task to notification-service
+
     }
 
     public Invitation acceptInvite(Long pendingInvitationId) {
@@ -51,12 +66,12 @@ public class InvitationService {
         return invitationRepository.findPendingInvitationsByJournalId(journalId);
     }
 
-    public List<Invitation> getPendingInvitationsForUserId(Long userId) {
-        return invitationRepository.findPendingInvitationsByUserId(userId);
+    public List<Invitation> getPendingInvitationsForUserEmail(String email) {
+        return invitationRepository.findPendingInvitationsByUserEmail(email);
     }
 
-    public List<String> getAcceptedJournalIdsForUser(Long userId) {
-        return invitationRepository.getAcceptedJournalIdsForUser(userId);
+    public List<String> getAcceptedJournalIdsForUser(String email) {
+        return invitationRepository.getAcceptedJournalIdsForUser(email);
     }
 
 }

@@ -14,12 +14,12 @@ public interface InvitationRepository extends JpaRepository<Invitation, Long> {
     @Query("SELECT i FROM Invitation i WHERE i.invitationStatus='PENDING' AND i.journalId = :journalId")
     List<Invitation> findPendingInvitationsByJournalId(@Param("journalId") String journalId);
 
-    @Query("SELECT i FROM Invitation i WHERE i.invitationStatus='PENDING' AND i.userId = :userId")
-    List<Invitation> findPendingInvitationsByUserId(@Param("userId") Long userId);
+    @Query("SELECT i FROM Invitation i WHERE i.invitationStatus='PENDING' AND i.userEmail = :userEmail")
+    List<Invitation> findPendingInvitationsByUserEmail(@Param("userEmail") String userEmail);
 
     @Query("SELECT i FROM Invitation i WHERE i.invitationStatus='PENDING' AND i.id = :id")
     Invitation findPendingInvitationById(@Param("id") Long invitationId);
 
-    @Query("SELECT i.journalId FROM Invitation i WHERE i.invitationStatus='ACCEPTED' AND i.userId = :userId")
-    List<String> getAcceptedJournalIdsForUser(@Param("userId") Long userId);
+    @Query("SELECT i.journalId FROM Invitation i WHERE i.invitationStatus='ACCEPTED' AND i.userEmail = :userEmail")
+    List<String> getAcceptedJournalIdsForUser(@Param("userEmail") String userEmail);
 }

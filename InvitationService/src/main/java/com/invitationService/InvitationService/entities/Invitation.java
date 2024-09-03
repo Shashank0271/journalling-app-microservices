@@ -13,16 +13,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"user_id", "journal_id"})
+        @UniqueConstraint(columnNames = {"invited_user_email", "journal_id"})
 })
 public class Invitation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "invitation_generator")
     @SequenceGenerator(name = "invitation_generator", sequenceName = "invitation_gen", initialValue = 80, allocationSize = 27)
-    @Column(name = "accepted_invitation_id")
+    @Column(name = "invitation_id")
     private Long invitationId;
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "invited_user_email")
+    private String userEmail;
     @Column(name = "journal_id")
     private String journalId;
     @Enumerated(EnumType.STRING)
